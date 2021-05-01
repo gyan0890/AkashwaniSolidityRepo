@@ -24,11 +24,11 @@ contract BridgeBase {
     token = Itoken(_token);
   }
 
-  function burn(address to, uint amount) external {
+  function burn(uint amount) external {
     token.burn(msg.sender, amount);
     emit Transfer(
       msg.sender,
-      to,
+      msg.sender,
       amount,
       block.timestamp,
       nonce,
